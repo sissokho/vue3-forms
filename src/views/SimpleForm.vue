@@ -2,7 +2,7 @@
 import BaseInput from '@/components/BaseInput.vue'
 import BaseSelect from '@/components/BaseSelect.vue'
 import BaseCheckbox from '@/components/BaseCheckbox.vue'
-import BaseRadio from '@/components/BaseRadio.vue'
+import BaseRadioGroup from '@/components/BaseRadioGroup.vue'
 </script>
 
 <template>
@@ -23,15 +23,7 @@ import BaseRadio from '@/components/BaseRadio.vue'
 
       <h3>Are pets allowed?</h3>
       <div>
-        <BaseRadio label="Yes" :value="1" v-model="event.pets" name="pets" />
-        <!-- <input type="radio" v-model="event.pets" :value="1" name="pets" />
-        <label>Yes</label> -->
-      </div>
-
-      <div>
-        <BaseRadio label="No" :value="0" v-model="event.pets" name="pets" />
-        <!-- <input type="radio" v-model="event.pets" :value="0" name="pets" />
-        <label>No</label> -->
+        <BaseRadioGroup name="pets" v-model="event.pets" :options="petOptions" />
       </div>
 
       <h3>Extras</h3>
@@ -71,7 +63,11 @@ export default {
           catering: false,
           music: false
         }
-      }
+      },
+      petOptions: [
+        { label: 'Yes', value: 1 },
+        { label: 'No', value: 0 }
+      ]
     }
   }
 }
