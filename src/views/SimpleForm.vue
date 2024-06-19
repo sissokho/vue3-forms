@@ -3,12 +3,52 @@ import BaseInput from '@/components/BaseInput.vue'
 import BaseSelect from '@/components/BaseSelect.vue'
 import BaseCheckbox from '@/components/BaseCheckbox.vue'
 import BaseRadioGroup from '@/components/BaseRadioGroup.vue'
+import axios from 'axios'
+import { reactive, ref } from 'vue'
+
+const categories = ref([
+  'sustainability',
+  'nature',
+  'animal welfare',
+  'housing',
+  'education',
+  'food',
+  'community'
+])
+
+const event = reactive({
+  category: '',
+  title: '',
+  description: '',
+  location: '',
+  pets: 1,
+  extras: {
+    catering: false,
+    music: false
+  }
+})
+
+const petOptions = ref([
+  { label: 'Yes', value: 1 },
+  { label: 'No', value: 0 }
+])
+
+function sendForm() {
+  axios
+    .post('http://localhost:3000/events', event)
+    .then((response) => {
+      console.log('Response', response)
+    })
+    .catch((error) => {
+      console.log('Error', error)
+    })
+}
 </script>
 
 <template>
   <div>
     <h1>Create an event</h1>
-    <form>
+    <form @submit.prevent="sendForm">
       <BaseSelect label="Select a category" :options="categories" v-model="event.category" />
 
       <h3>Name & describe your event</h3>
@@ -39,36 +79,3 @@ import BaseRadioGroup from '@/components/BaseRadioGroup.vue'
     </form>
   </div>
 </template>
-
-<script>
-export default {
-  data() {
-    return {
-      categories: [
-        'sustainability',
-        'nature',
-        'animal welfare',
-        'housing',
-        'education',
-        'food',
-        'community'
-      ],
-      event: {
-        category: '',
-        title: '',
-        description: '',
-        location: '',
-        pets: 1,
-        extras: {
-          catering: false,
-          music: false
-        }
-      },
-      petOptions: [
-        { label: 'Yes', value: 1 },
-        { label: 'No', value: 0 }
-      ]
-    }
-  }
-}
-</script>

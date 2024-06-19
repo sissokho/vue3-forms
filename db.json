@@ -1,0 +1,28 @@
+{
+  "events": [
+    {
+      "id": "1",
+      "category": "animal welfare",
+      "title": "Frenz of bunz",
+      "description": "🐰 an frenz",
+      "location": "Zoom - stay safe",
+      "pets": 1,
+      "extras": {
+        "catering": true,
+        "music": true
+      }
+    },
+    {
+      "id": "63e7",
+      "category": "education",
+      "title": "Test education",
+      "description": "Some description",
+      "location": "Senegal",
+      "pets": 0,
+      "extras": {
+        "catering": true,
+        "music": false
+      }
+    }
+  ]
+}
