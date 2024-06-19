@@ -1,4 +1,6 @@
 <script setup>
+import UniqueID from '@/features/UniqueID'
+
 defineProps({
   label: {
     type: String,
@@ -11,10 +13,11 @@ defineProps({
 })
 
 const model = defineModel()
+const uuid = UniqueID().getID()
 </script>
 <template>
-  <label v-if="label">{{ label }}</label>
-  <select v-model="model" v-bind="$attrs">
+  <label v-if="label" :for="uuid">{{ label }}</label>
+  <select :id="uuid" v-model="model" v-bind="$attrs">
     <option v-for="option in options" :value="option" :key="option" :selected="option === model">
       {{ option }}
     </option>
