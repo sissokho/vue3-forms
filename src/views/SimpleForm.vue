@@ -2,6 +2,7 @@
 import BaseInput from '@/components/BaseInput.vue'
 import BaseSelect from '@/components/BaseSelect.vue'
 import BaseCheckbox from '@/components/BaseCheckbox.vue'
+import BaseRadio from '@/components/BaseRadio.vue'
 </script>
 
 <template>
@@ -22,13 +23,15 @@ import BaseCheckbox from '@/components/BaseCheckbox.vue'
 
       <h3>Are pets allowed?</h3>
       <div>
-        <input type="radio" v-model="event.pets" :value="1" name="pets" />
-        <label>Yes</label>
+        <BaseRadio label="Yes" :value="1" v-model="event.pets" name="pets" />
+        <!-- <input type="radio" v-model="event.pets" :value="1" name="pets" />
+        <label>Yes</label> -->
       </div>
 
       <div>
-        <input type="radio" v-model="event.pets" :value="0" name="pets" />
-        <label>No</label>
+        <BaseRadio label="No" :value="0" v-model="event.pets" name="pets" />
+        <!-- <input type="radio" v-model="event.pets" :value="0" name="pets" />
+        <label>No</label> -->
       </div>
 
       <h3>Extras</h3>
