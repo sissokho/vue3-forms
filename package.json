@@ -11,6 +11,7 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@vee-validate/yup": "^4.13.1",
     "axios": "^1.7.2",
     "vee-validate": "^4.13.1",
     "vue": "^3.4.29"
