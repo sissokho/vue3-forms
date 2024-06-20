@@ -1,11 +1,11 @@
 <script setup>
-import SimpleForm from '@/views/SimpleForm.vue'
+import LoginForm from '@/views/LoginForm.vue'
 </script>
 
 <template>
-  <main>
-    <SimpleForm />
-  </main>
+  <div id="app">
+    <LoginForm />
+  </div>
 </template>
 
 <style>
@@ -197,6 +197,7 @@ textarea {
 [type='text'],
 [type='number'],
 [type='search'],
+[type='email'],
 [type='password'] {
   height: 52px;
   width: 100%;
@@ -206,6 +207,7 @@ textarea {
 [type='text']:focus,
 [type='number']:focus,
 [type='search']:focus,
+[type='email']:focus,
 [type='password']:focus {
   border-color: #39b982;
 }

@@ -1,5 +1,6 @@
 <script setup>
 import UniqueID from '@/features/UniqueID'
+import BaseErrorMessage from './BaseErrorMessage.vue'
 
 defineProps({
   label: {
@@ -14,4 +15,5 @@ const uuid = UniqueID().getID()
 <template>
   <input type="checkbox" :id="uuid" v-model="model" class="field" />
   <label v-if="label" :for="uuid">{{ label }}</label>
+  <BaseErrorMessage v-if="error" :id="`${uuid}-error`">{{ error }}</BaseErrorMessage>
 </template>
