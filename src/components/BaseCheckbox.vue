@@ -6,6 +6,10 @@ defineProps({
   label: {
     type: String,
     default: ''
+  },
+  error: {
+    type: String,
+    default: ''
   }
 })
 

@@ -13,6 +13,10 @@ defineProps({
   vertical: {
     type: Boolean,
     default: false
+  },
+  error: {
+    type: String,
+    default: ''
   }
 })
 

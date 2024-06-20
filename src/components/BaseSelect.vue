@@ -1,5 +1,6 @@
 <script setup>
 import UniqueID from '@/features/UniqueID'
+import BaseErrorMessage from './BaseErrorMessage.vue'
 
 defineProps({
   label: {
@@ -9,6 +10,10 @@ defineProps({
   options: {
     type: Array,
     required: true
+  },
+  error: {
+    type: String,
+    default: ''
   }
 })
 
